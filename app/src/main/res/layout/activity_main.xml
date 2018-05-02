@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mindinventory.midrawer.MIDrawerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:fitsSystemWindows="true"
+    app:sliderType="Door"
+    tools:openDrawer="start">
+
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.design.widget.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nav_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_set_as"
+                android:drawablePadding="10dp"
+                android:drawableTint="@android:color/holo_orange_dark"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:text="@string/scroll"
+                android:textColor="@android:color/holo_orange_dark" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/drawer_bg" />
+
+            <TextView
+                android:id="@+id/nav_slide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_set_as"
+                android:drawablePadding="10dp"
+                android:drawableTint="@android:color/holo_blue_dark"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:text="@string/slide"
+                android:textColor="@android:color/holo_blue_dark" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/drawer_bg" />
+
+            <TextView
+                android:id="@+id/nav_door"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@android:drawable/ic_menu_set_as"
+                android:drawablePadding="10dp"
+                android:drawableTint="@android:color/holo_green_dark"
+                android:gravity="center_vertical"
+                android:padding="20dp"
+                android:text="@string/door"
+                android:textColor="@android:color/holo_green_dark" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/drawer_bg" />
+
+        </LinearLayout>
+
+    </android.support.design.widget.NavigationView>
+
+</com.mindinventory.midrawer.MIDrawerView>
