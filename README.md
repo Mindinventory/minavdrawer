@@ -1,10 +1,9 @@
 # minavdrawer
 Easy to use customisations of standard NavigationDrawer
 
-            Door            |            Slide            |              Scroll
-:--------------------------:|:---------------------------:|:------------------------------:
-  ![image](/media/Door.png) |  ![image](/media/Slide.png) |   ![image](/media/Scroll.png)
-
+| Door                      | Slide                      | Scroll                     |
+| ------------------------- | -------------------------- | -------------------------- |
+| ![image](/media/Door.png) | ![image](/media/Slide.png) | ![image](/media/Scroll.png)|
   
 # Usage
 
