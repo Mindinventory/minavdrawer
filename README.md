@@ -1,9 +1,9 @@
 # minavdrawer
 Easy to use customisations of standard NavigationDrawer
 
-| Door                      | Slide                      | Scroll                     |
-| ------------------------- | -------------------------- | -------------------------- |
-| ![image](/media/Door.png) | ![image](/media/Slide.png) | ![image](/media/Scroll.png)|
+| DoorIn                      | Slide                      | Scroll                     | DoorOut                    |
+| --------------------------- | -------------------------- | -------------------------- | -------------------------- |
+| ![image](/media/DoorIn.png) | ![image](/media/Slide.png) | ![image](/media/Scroll.png)| ![image](/media/DoorOut.png)|
   
 # Usage
 
@@ -19,20 +19,21 @@ Easy to use customisations of standard NavigationDrawer
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
     android:fitsSystemWindows="true"
-    app:sliderType="Door"
+    app:sliderType="doorIn"
     tools:openDrawer="start">
 ```
 
 * Use attribute for the Drawer sliding style from xml.
 
 ```groovy
-app:sliderType="Door"
+app:sliderType="doorIn"
 
 // Here, sliderType types are following.
 
-// Scroll (For sliding view with content)
-// Slide (Open a drawer with content sliding with scale and rotation both.)
-// Door (Open a drawer with content sliding with scale only)
+// scroll (For sliding view with content)
+// slide (Open a drawer with content sliding with scale and rotation both.)
+// doorIn (Open a drawer inside with content sliding with scale only)
+// doorOut (Open a drawer outside with content sliding with scale only)
 ```
 
  * Use attribute for the Drawer sliding style from dynamically in kotlin or Java class.
@@ -45,13 +46,16 @@ drawer_layout.setSliderType(slideType)
 // Here, slideType types are following.
 
 // (For sliding view with content)
-// MIDrawerView.MI_TYPE_SLIDE_WITH_CONTENT (For Scroll)
+// MIDrawerView.MI_TYPE_SLIDE_WITH_CONTENT (For scroll)
 
 // (Open a drawer with content sliding with scale and rotation both.)
-// MIDrawerView.MI_TYPE_SLIDE (For Slide)
+// MIDrawerView.MI_TYPE_SLIDE (For slide)
 
-// (Open a drawer with content sliding with scale only)
-// MIDrawerView.MI_TYPE_DOOR (For Door)
+// (Open a drawer inside with content sliding with scale only)
+// MIDrawerView.MI_TYPE_DOOR_IN (For doorIn)
+
+// (Open a drawer outside with content sliding with scale only)
+// MIDrawerView.MI_TYPE_DOOR_OUT (For doorOut)
 ```
 
 # LICENSE!
