@@ -1,4 +1,4 @@
-package com.example.harsh.minavigationdrawer
+package com.example.minavigationdrawer
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

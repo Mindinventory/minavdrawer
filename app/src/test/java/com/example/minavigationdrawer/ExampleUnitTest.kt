@@ -1,4 +1,4 @@
-package com.example.harsh.minavigationdrawer
+package com.example.minavigationdrawer
 
 import org.junit.Test
 

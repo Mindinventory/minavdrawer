@@ -3,9 +3,10 @@
     <declare-styleable name="MIDrawerView">
         <eat-comment />
         <attr name="sliderType">
-            <enum name="Scroll" value="1"/>
-            <enum name="Door" value="2"/>
-            <enum name="Slide" value="3"/>
+            <enum name="scroll" value="1"/>
+            <enum name="doorIn" value="2"/>
+            <enum name="doorOut" value="3"/>
+            <enum name="slide" value="4"/>
         </attr>
     </declare-styleable>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.harsh.minavigationdrawer
+package com.example.minavigationdrawer
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,7 +11,8 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import com.mindinventory.midrawer.MIDrawerView
-import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_DOOR
+import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_DOOR_IN
+import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_DOOR_OUT
 import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_SLIDE
 import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_SLIDE_WITH_CONTENT
 
@@ -29,7 +30,8 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
 
         nav_scroll.setOnClickListener(this)
         nav_slide.setOnClickListener(this)
-        nav_door.setOnClickListener(this)
+        nav_doorIn.setOnClickListener(this)
+        nav_doorOut.setOnClickListener(this)
 
         setSupportActionBar(toolbar)
 
@@ -71,9 +73,14 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
                 slideType = MI_TYPE_SLIDE
                 updateSliderTypeEvents()
             }
-            R.id.nav_door -> {
-                avoidDoubleClicks(nav_door)
-                slideType = MI_TYPE_DOOR
+            R.id.nav_doorIn -> {
+                avoidDoubleClicks(nav_doorIn)
+                slideType = MI_TYPE_DOOR_IN
+                updateSliderTypeEvents()
+            }
+            R.id.nav_doorOut -> {
+                avoidDoubleClicks(nav_doorIn)
+                slideType = MI_TYPE_DOOR_OUT
                 updateSliderTypeEvents()
             }
         }
@@ -96,8 +103,11 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
             MI_TYPE_SLIDE -> {
                 toolbar.title = this@MIDrawerActivity.resources.getString(R.string.slide)
             }
-            MI_TYPE_DOOR -> {
-                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.door)
+            MI_TYPE_DOOR_IN -> {
+                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.doorIn)
+            }
+            MI_TYPE_DOOR_OUT -> {
+                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.doorOut)
             }
         }
         drawer_layout.setSliderType(slideType)

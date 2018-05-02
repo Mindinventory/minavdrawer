@@ -15,8 +15,9 @@ public class MIDrawerView : DrawerLayout {
 
     companion object {
         val MI_TYPE_SLIDE_WITH_CONTENT = 1 // For sliding view with content
-        val MI_TYPE_DOOR = 2 // Open a drawer with content sliding with scale and rotation both.
-        val MI_TYPE_SLIDE = 3 // Open a drawer with content sliding with scale only
+        val MI_TYPE_DOOR_IN = 2 // Open a drawer inside with content sliding with scale and rotation both.
+        val MI_TYPE_DOOR_OUT = 3 // Open a drawer outside with content sliding with scale and rotation both.
+        val MI_TYPE_SLIDE = 4 // Open a drawer with content sliding with scale only
     }
 
     private val min = 0.7f
@@ -64,7 +65,7 @@ public class MIDrawerView : DrawerLayout {
                             contentView!!.translationX = navigationView.width * slideOffset
                         }
                     }
-                    MI_TYPE_DOOR -> if (contentView != null) {
+                    MI_TYPE_DOOR_IN -> if (contentView != null) {
                         val scaleFactor = max - (max - min) * slideOffset
                         val width = drawerView.width
                         var moveFactor = width * slideOffset
@@ -77,6 +78,23 @@ public class MIDrawerView : DrawerLayout {
                             // If app in LTR mode.
                             contentView.translationX = moveFactor
                             contentView.rotationY = moveFactor * -rotaionOffset / width
+                        }
+                        contentView.scaleY = scaleFactor
+                        contentView.scaleX = scaleFactor
+                    }
+                    MI_TYPE_DOOR_OUT -> if (contentView != null) {
+                        val scaleFactor = max - (max - min) * slideOffset
+                        val width = drawerView.width
+                        var moveFactor = width * slideOffset
+                        moveFactor *= scaleFactor
+                        if (config.layoutDirection == View.LAYOUT_DIRECTION_RTL) {
+                            // If app in RTL mode.
+                            contentView.translationX = -moveFactor
+                            contentView.rotationY = (-(moveFactor * -rotaionOffset) / width)
+                        } else {
+                            // If app in LTR mode.
+                            contentView.translationX = moveFactor
+                            contentView.rotationY = moveFactor * rotaionOffset / width
                         }
                         contentView.scaleY = scaleFactor
                         contentView.scaleX = scaleFactor

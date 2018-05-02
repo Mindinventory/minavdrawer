@@ -10,4 +10,6 @@
     <string name="scroll">Scroll</string>
     <string name="slide">Slide</string>
     <string name="door">Door</string>
+    <string name="doorIn">DoorIn</string>
+    <string name="doorOut">DoorOut</string>
 </resources>
