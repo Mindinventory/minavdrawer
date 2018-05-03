@@ -1,19 +1,18 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'kotlin-android'
+
+group='com.github.mindinventory1'
 
 android {
     compileSdkVersion 27
-
-
 
     defaultConfig {
         minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
