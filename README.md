@@ -1,10 +1,11 @@
-# minavdrawer
+# minavdrawer [![](https://jitpack.io/v/mindinventory1/minavdrawer.svg)](https://jitpack.io/#mindinventory1/minavdrawer)
+
 Easy to use customisations of standard NavigationDrawer
 
 | DoorIn                      | Slide                      | Scroll                     | DoorOut                    |
 | --------------------------- | -------------------------- | -------------------------- | -------------------------- |
 | ![image](/media/DoorIn.png) | ![image](/media/Slide.png) | ![image](/media/Scroll.png)| ![image](/media/DoorOut.png)|
-  
+
 # Usage
 
 * MIDrawerView.kt is the DrawerView component, add it to your xml file for drawer view.
