@@ -87,4 +87,4 @@ drawer_layout.setSliderType(slideType)
 MIDrawerView is [MIT-licensed](https://github.com/mindinventory1/minavdrawer/blob/master/LICENSE).
 
 # Let us know!
-We’d be really happy if you sent us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
+We’d be really happy if you send us links to your projects where you use our component. Just send an email to sales@mindinventory.com And do let us know if you have any questions or suggestion regarding our work.
