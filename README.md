@@ -1,4 +1,4 @@
-# minavdrawer [![](https://jitpack.io/v/mindinventory1/minavdrawer.svg)](https://jitpack.io/#mindinventory1/minavdrawer)
+# Navigation Drawer Customisations [![](https://jitpack.io/v/mindinventory1/minavdrawer.svg)](https://jitpack.io/#mindinventory1/minavdrawer)
 
 Easy to use customisations of standard NavigationDrawer
 
