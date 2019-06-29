@@ -4,7 +4,7 @@ Easy to use customisations of standard NavigationDrawer
 
 | DoorIn                      | Slide                      | Scroll                     | DoorOut                    |
 | --------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| ![image](/media/DoorIn.png) | ![image](/media/Slide.png) | ![image](/media/Scroll.png)| ![image](/media/DoorOut.png)|
+| ![image](/media/doorIn.gif) | ![image](/media/slide.gif) | ![image](/media/scroll.gif)| ![image](/media/doorOut.gif)|
 
 # Usage
 

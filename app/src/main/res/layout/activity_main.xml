@@ -36,11 +36,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@android:drawable/ic_menu_set_as"
                 android:drawablePadding="10dp"
-                android:drawableTint="@android:color/holo_orange_dark"
+                android:drawableTint="@android:color/white"
                 android:gravity="center_vertical"
                 android:padding="20dp"
+                android:textStyle="bold"
                 android:text="@string/scroll"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="@android:color/white" />
 
             <View
                 android:layout_width="match_parent"
@@ -55,11 +56,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@android:drawable/ic_menu_set_as"
                 android:drawablePadding="10dp"
-                android:drawableTint="@android:color/holo_blue_dark"
+                android:drawableTint="@android:color/white"
                 android:gravity="center_vertical"
                 android:padding="20dp"
+                android:textStyle="bold"
                 android:text="@string/slide"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="@android:color/white" />
 
             <View
                 android:layout_width="match_parent"
@@ -74,11 +76,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@android:drawable/ic_menu_set_as"
                 android:drawablePadding="10dp"
-                android:drawableTint="@android:color/holo_green_dark"
+                android:drawableTint="@android:color/white"
                 android:gravity="center_vertical"
                 android:padding="20dp"
+                android:textStyle="bold"
                 android:text="@string/doorIn"
-                android:textColor="@android:color/holo_green_dark" />
+                android:textColor="@android:color/white" />
 
             <View
                 android:layout_width="match_parent"
@@ -93,11 +96,12 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@android:drawable/ic_menu_set_as"
                 android:drawablePadding="10dp"
-                android:drawableTint="@android:color/holo_orange_dark"
+                android:drawableTint="@android:color/white"
                 android:gravity="center_vertical"
                 android:padding="20dp"
+                android:textStyle="bold"
                 android:text="@string/doorOut"
-                android:textColor="@android:color/holo_orange_dark" />
+                android:textColor="@android:color/white" />
 
             <View
                 android:layout_width="match_parent"
