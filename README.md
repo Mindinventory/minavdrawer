@@ -27,7 +27,7 @@ Easy to use customisations of standard NavigationDrawer
     Step 2. Add the dependency
     ```groovy
 	    dependencies {
-		    implementation 'com.github.mindinventory:minavdrawer:1.1.1'
+		    implementation 'com.github.mindinventory:minavdrawer:<X.X.X>'
 	    }
     ```
     
