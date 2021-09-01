@@ -2,16 +2,16 @@ package com.mindinventory.midrawer
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.support.v4.view.GravityCompat
-import android.support.v4.widget.DrawerLayout
+import androidx.core.view.GravityCompat
 import android.util.AttributeSet
 import android.view.View
+import androidx.drawerlayout.widget.DrawerLayout
 
 /**
  *  Here is a view for the navigation Drawer.
  *  From which you can set the drawer style as requirements with only one param.
  */
-public class MIDrawerView : DrawerLayout {
+class MIDrawerView : DrawerLayout {
 
     companion object {
         val MI_TYPE_SLIDE_WITH_CONTENT = 1 // For sliding view with content

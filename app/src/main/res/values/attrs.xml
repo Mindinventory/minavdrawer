@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MIDrawerView">
-        <attr name="sliderType" format="integer" />
+        <attr name="sliderType" format="integer" >
+            <enum name="scroll" value="1"/>
+            <enum name="doorIn" value="2"/>
+            <enum name="doorOut" value="3"/>
+            <enum name="slide" value="4"/>
+        </attr>
     </declare-styleable>
 </resources>
