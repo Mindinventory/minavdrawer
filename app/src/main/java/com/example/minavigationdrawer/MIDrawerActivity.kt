@@ -3,13 +3,12 @@ package com.example.minavigationdrawer
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
-import android.support.v4.view.GravityCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
+import com.example.minavigationdrawer.databinding.ActivityMainBinding
 import com.mindinventory.midrawer.MIDrawerView
 import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_DOOR_IN
 import com.mindinventory.midrawer.MIDrawerView.Companion.MI_TYPE_DOOR_OUT
@@ -20,27 +19,29 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
 
     val TAG = "MIDrawerActivity"
     private var slideType = 0
+    private lateinit var activityMainBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(activityMainBinding.root)
 
         // Set color for the container's content as transparent
-        drawer_layout.setScrimColor(Color.TRANSPARENT)
+        activityMainBinding.drawerLayout.setScrimColor(Color.TRANSPARENT)
 
-        nav_scroll.setOnClickListener(this)
-        nav_slide.setOnClickListener(this)
-        nav_doorIn.setOnClickListener(this)
-        nav_doorOut.setOnClickListener(this)
+        activityMainBinding.navScroll.setOnClickListener(this)
+        activityMainBinding.navSlide.setOnClickListener(this)
+        activityMainBinding.navDoorIn.setOnClickListener(this)
+        activityMainBinding.navDoorOut.setOnClickListener(this)
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(activityMainBinding.includeToolbar.toolbar)
 
         val actionbar = supportActionBar
         actionbar?.setDisplayHomeAsUpEnabled(true)
         actionbar?.setHomeAsUpIndicator(R.drawable.ic_action_name)
 
         // Implement the drawer listener
-        drawer_layout.setMIDrawerListener(object : MIDrawerView.MIDrawerEvents {
+        activityMainBinding.drawerLayout.setMIDrawerListener(object : MIDrawerView.MIDrawerEvents {
             override fun onDrawerOpened(drawerView: View) {
                 super.onDrawerOpened(drawerView)
                 Log.d(TAG, "Drawer Opened")
@@ -54,8 +55,8 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
+        if (activityMainBinding.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            activityMainBinding.drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
@@ -64,22 +65,22 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         when (v.id) {
             R.id.nav_scroll -> {
-                avoidDoubleClicks(nav_scroll)
+                avoidDoubleClicks(activityMainBinding.navScroll)
                 slideType = MI_TYPE_SLIDE_WITH_CONTENT
                 updateSliderTypeEvents()
             }
             R.id.nav_slide -> {
-                avoidDoubleClicks(nav_slide)
+                avoidDoubleClicks(activityMainBinding.navSlide)
                 slideType = MI_TYPE_SLIDE
                 updateSliderTypeEvents()
             }
             R.id.nav_doorIn -> {
-                avoidDoubleClicks(nav_doorIn)
+                avoidDoubleClicks(activityMainBinding.navDoorIn)
                 slideType = MI_TYPE_DOOR_IN
                 updateSliderTypeEvents()
             }
             R.id.nav_doorOut -> {
-                avoidDoubleClicks(nav_doorIn)
+                avoidDoubleClicks(activityMainBinding.navDoorIn)
                 slideType = MI_TYPE_DOOR_OUT
                 updateSliderTypeEvents()
             }
@@ -89,7 +90,7 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
     private fun updateSliderTypeEvents() {
         if (handler == null) {
             handler = Handler()
-            drawer_layout.closeDrawer(GravityCompat.START)
+            activityMainBinding.drawerLayout.closeDrawer(GravityCompat.START)
             handler?.postDelayed(runnable, 500)
         }
     }
@@ -98,26 +99,26 @@ class MIDrawerActivity : AppCompatActivity(), View.OnClickListener {
     var runnable: Runnable = Runnable {
         when (slideType) {
             MI_TYPE_SLIDE_WITH_CONTENT -> {
-                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.scroll)
+                activityMainBinding.includeToolbar.toolbar.title = this@MIDrawerActivity.resources.getString(R.string.scroll)
             }
             MI_TYPE_SLIDE -> {
-                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.slide)
+                activityMainBinding.includeToolbar.toolbar.title = this@MIDrawerActivity.resources.getString(R.string.slide)
             }
             MI_TYPE_DOOR_IN -> {
-                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.doorIn)
+                activityMainBinding.includeToolbar.toolbar.title = this@MIDrawerActivity.resources.getString(R.string.doorIn)
             }
             MI_TYPE_DOOR_OUT -> {
-                toolbar.title = this@MIDrawerActivity.resources.getString(R.string.doorOut)
+                activityMainBinding.includeToolbar.toolbar.title = this@MIDrawerActivity.resources.getString(R.string.doorOut)
             }
         }
-        drawer_layout.setSliderType(slideType)
+        activityMainBinding.drawerLayout.setSliderType(slideType)
         handler = null
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
-                drawer_layout.openDrawer(GravityCompat.START)
+                activityMainBinding.drawerLayout.openDrawer(GravityCompat.START)
                 return true
             }
         }
